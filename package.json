@@ -1,5 +1,5 @@
 {
-  "name": "bee-agent-framework-starter",
+  "name": "bee-empty",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -21,17 +21,13 @@
     "url": "https://github.com/i-am-bee/bee-agent-framework-starter/issues"
   },
   "scripts": {
-    "start": "npm exec tsx",
+    "start": "npm exec tsx src/agent.js",
     "ts:check": "tsc --noEmit --project tsconfig.json",
     "build": "rimraf dist && tsc",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "infra:pull": "docker compose --profile=${npm_config_profile:=all} pull",
-    "infra:start": "docker compose --profile=${npm_config_profile:=all} up --detach --wait",
-    "infra:stop": "docker compose --profile=${npm_config_profile:=all} down",
-    "infra:remove": "npm run infra:stop -- --volumes",
     "_ensure_env": "cp -n .env.template .env || true",
     "prepare": "husky && npm run _ensure_env"
   },
